@@ -1,0 +1,68 @@
+:root {
+  font-family: 'Hanken Grotesk', system-ui, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* color-scheme: light dark; */
+  --color-dark: #000;
+  --color-dark-grey: #999;
+  --color-grey: #f5f5f5;
+  --color-light: #fff;
+  /* --color-accent: #cecece; */
+  --color-accent: #f5f5f5;
+  
+  color: var(--color-dark);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Hanken Grotesk', system-ui, Helvetica, Arial, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  /* background-color: var(--color-grey); */
+  background-color: var(--color-accent);
+}
+
+#root {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-size: 16px;
+  font-weight: bold;
+  background: var(--color-dark);
+  color: var(--color-light);
+  border: 1px solid var(--color-dark);
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: .3s ease-in-out all;
+  cursor: pointer;
+}
+
+button:hover {
+  background: none;
+  color: var(--color-dark);
+}
+
+input:focus {
+  outline: none;
+}
