@@ -30,11 +30,11 @@ export default function App() {
   }
 
   function loadTasks() {
-    setTasks(JSON.parse(localStorage.getItem('vera-tasks')) || [])
+    setTasks(JSON.parse(localStorage.getItem('vera-mind')) || [])
   }
 
   function saveTasks() {
-    localStorage.setItem('vera-tasks', JSON.stringify(tasks))
+    localStorage.setItem('vera-mind', JSON.stringify(tasks))
   }
 
   function handleInputChange(e) {
