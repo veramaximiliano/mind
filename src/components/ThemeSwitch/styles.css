@@ -1,0 +1,43 @@
+
+.theme-switch {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    padding: 10px;
+  
+    .theme-switch-options {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: 1s ease all;
+    }
+  
+    &.active .theme-switch-options {
+      max-height: 1000px;
+      opacity: 1;
+    }
+  
+    .theme-switch-option {
+      cursor: pointer;
+      font-size: 0;
+      margin-bottom: 15px;
+    }
+  
+    .theme-switch-option::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: var(--color-light);
+      border: 2px solid var(--color-dark);
+      border-radius: 20px;
+    }
+    .theme-switch-option.theme-switch-option-light::before {background: var(--color-white); }
+    .theme-switch-option.theme-switch-option-dark::before { background: var(--color-black); }
+    .theme-switch-option.theme-switch-option-pink::before { background: var(--color-pink); }
+    .theme-switch-option.theme-switch-option-green::before { background: var(--color-green); }
+    .theme-switch-option.theme-switch-option-yellow::before { background: var(--color-yellow); }
+  }

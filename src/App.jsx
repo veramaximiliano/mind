@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import './App.css'
-import Graphics from "./assets/Graphics";
+import ThemeSwitch from "./components/ThemeSwitch/";
 
 
 export default function App() {
+  const [theme, setTheme] = useState('')
   const [tasks, setTasks] = useState([])
   const [text, setText] = useState('')
   const [operation, setOperation] = useState('none')
@@ -29,12 +30,14 @@ export default function App() {
     setOperation('task-deleted')
   }
 
-  function loadTasks() {
-    setTasks(JSON.parse(localStorage.getItem('vera-mind')) || [])
+  function loadSettings() {
+    const mind = JSON.parse(localStorage.getItem('vera-mind')) || { theme: 'light', tasks: []}
+    setTheme(mind.theme)
+    setTasks(mind.tasks)
   }
 
-  function saveTasks() {
-    localStorage.setItem('vera-mind', JSON.stringify(tasks))
+  function saveSettings() {
+    localStorage.setItem('vera-mind', JSON.stringify({ theme, tasks }))
   }
 
   function handleInputChange(e) {
@@ -49,40 +52,48 @@ export default function App() {
     ))
   }
 
+  function handleThemeChange(theme){
+    setTheme(theme)
+  }
+
   useEffect(() => {
     if (operation == 'task-added')
       taskContainerRef.current.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" })
     setOperation('none')
   }, [operation])
 
-  useEffect(loadTasks, [])
-  useEffect(saveTasks, [tasks])
+  useEffect(loadSettings, [])
+  useEffect(saveSettings, [tasks, theme])
 
   return (
-    <div className="mind">
-      <header>
-        <h1>mind.</h1>
-      </header>
-      <main>
-        <ul className="tasks" ref={taskContainerRef}>
-          {
-            tasks.map(task => (
-              <li className={`task${task.completed ? ' completed' : ''}`} key={task.id}>
-                <p className="task-description" onClick={() => handleToggleCompleted(task.id)}>
-                  <span>{task.text}</span>
-                </p>
-                <button className="task-delete" onClick={() => removeTask(task.id)}>Delete <Graphics graphic={'trash'} /></button>
-              </li>
-            ))
-          }
-        </ul>
-      </main>
-      <footer>
-        <form onSubmit={addTask} className="tasks-form">
-          <input type="text" value={text} onChange={handleInputChange} placeholder="Become a hero..." autoFocus={true} />
-          <button type="submit">Add</button>
-        </form>
-      </footer>
+    <div className="mind" data-theme={theme}>
+      <div className="wrapper">
+        <header>
+          <h1>mind.</h1>
+        </header>
+        <main>
+          <ul className="tasks" ref={taskContainerRef}>
+            {
+              tasks.map(task => (
+                <li className={`task${task.completed ? ' completed' : ''}`} key={task.id}>
+                  <p className="task-description" onClick={() => handleToggleCompleted(task.id)}>
+                    <span>{task.text}</span>
+                  </p>
+                  <button className="task-delete" onClick={() => removeTask(task.id)}>+</button>
+                </li>
+              ))
+            }
+          </ul>
+        </main>
+        <footer>
+          <form onSubmit={addTask} className="tasks-form">
+            <input type="text" value={text} onChange={handleInputChange} placeholder="Become a hero..." autoFocus={true} />
+            <button type="submit">Add</button>
+          </form>
+        </footer>
+
+        <ThemeSwitch theme={theme} onChangeTheme={handleThemeChange}/>    
+      </div>
     </div>
   )
 
