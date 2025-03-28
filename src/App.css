@@ -87,6 +87,7 @@
                 font-weight: normal;
                 transform: rotate(45deg);
                 border: none;
+                padding: 0;
                 opacity: 0;
                 transition: .5s ease-in-out opacity;
             }
@@ -130,8 +131,6 @@
 
             button {
                 color: var(--color-light);
-                padding: 0;
-                
                 &:hover {
                     color: var(--color-dark);
                 }
