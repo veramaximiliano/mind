@@ -35,7 +35,13 @@
       border: 2px solid var(--color-dark);
       border-radius: 20px;
     }
-    .theme-switch-option.theme-switch-option-light::before {background: var(--color-white); }
+
+    .theme-switch-options .theme-switch-option::before {
+      border-color: transparent;
+    }
+
+
+    .theme-switch-option.theme-switch-option-light::before {background: var(--color-pale); }
     .theme-switch-option.theme-switch-option-dark::before { background: var(--color-black); }
     .theme-switch-option.theme-switch-option-pink::before { background: var(--color-pink); }
     .theme-switch-option.theme-switch-option-green::before { background: var(--color-green); }

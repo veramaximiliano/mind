@@ -3,11 +3,12 @@
   line-height: 1.5;
   font-weight: 400;
 
-  --color-white: #f5f5f5;
-  --color-black: #000;
+  --color-white: #fff;
+  --color-black: #303442;
   --color-blue: #111f79;
   --color-pink: #e9c8ce;
   --color-green: #a4d3ca;
+  --color-pale: #f9f7ee;
   --color-yellow: rgb(236, 230, 131);
 
   --color-dark: var(--color-black);
@@ -20,7 +21,7 @@
 }
 
 [data-theme="light"]{
-  --color-light: var(--color-white);
+  --color-light: var(--color-pale);
   --color-dark: var(--color-black);
 }
 

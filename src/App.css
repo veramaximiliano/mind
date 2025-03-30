@@ -28,6 +28,10 @@
 
     }
 
+    &.no-tasks header {
+        padding: 40px 40px 0;
+    }
+
     /* Main */
     main {
         padding: 0 40px;

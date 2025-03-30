@@ -66,7 +66,7 @@ export default function App() {
   useEffect(saveSettings, [tasks, theme])
 
   return (
-    <div className="mind" data-theme={theme}>
+    <div className={`mind${tasks.length === 0 ? ' no-tasks' : ''}`} data-theme={theme}>
       <div className="wrapper">
         <header>
           <h1>mind.</h1>
