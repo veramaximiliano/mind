@@ -2,8 +2,9 @@
 .theme-switch {
     position: fixed;
     top: 30px;
-    right: 30px;
+    right: 10px;
     padding: 10px;
+    z-index: 10;
   
     .theme-switch-options {
       list-style: none;

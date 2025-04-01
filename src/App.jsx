@@ -32,7 +32,7 @@ export default function App() {
 
   function loadSettings() {
     const mind = JSON.parse(localStorage.getItem('vera-mind')) || { theme: 'light', tasks: []}
-    setTheme(mind.theme)
+    handleThemeChange(mind.theme)
     setTasks(mind.tasks)
   }
 
@@ -54,6 +54,7 @@ export default function App() {
 
   function handleThemeChange(theme){
     setTheme(theme)
+    document.querySelector('body').setAttribute('data-theme', theme)
   }
 
   useEffect(() => {
@@ -66,7 +67,7 @@ export default function App() {
   useEffect(saveSettings, [tasks, theme])
 
   return (
-    <div className={`mind${tasks.length === 0 ? ' no-tasks' : ''}`} data-theme={theme}>
+    <div className={`mind${tasks.length === 0 ? ' no-tasks' : ''}`}>
       <div className="wrapper">
         <header>
           <h1>mind.</h1>
