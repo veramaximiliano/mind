@@ -35,9 +35,10 @@
       background: var(--color-light);
       border: 2px solid var(--color-dark);
       border-radius: 20px;
+      transition: .5s ease border-color;
     }
 
-    .theme-switch-options .theme-switch-option::before {
+    .theme-switch-options .theme-switch-option:not(:hover)::before {
       border-color: transparent;
     }
 
@@ -47,4 +48,11 @@
     .theme-switch-option.theme-switch-option-pink::before { background: var(--color-pink); }
     .theme-switch-option.theme-switch-option-green::before { background: var(--color-green); }
     .theme-switch-option.theme-switch-option-yellow::before { background: var(--color-yellow); }
+  }
+
+
+  @media screen and (max-width: 992px){
+    .theme-switch-options .theme-switch-option::before {
+      border-color: transparent;
+    }
   }
