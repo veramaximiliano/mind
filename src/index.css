@@ -7,7 +7,7 @@
   --color-black: #303442;
   --color-blue: #111f79;
   --color-pink: #e9c8ce;
-  --color-green: #a4d3ca;
+  --color-bb-blue: #93A9D2;
   --color-pale: #f9f7ee;
   --color-yellow: rgb(236, 230, 131);
 
@@ -26,8 +26,9 @@
 }
 
 [data-theme="dark"]{
-  --color-dark: var(--color-white);
+  --color-dark: var(--color-pale);
   --color-light: var(--color-black);
+  
 }
 
 [data-theme="pink"]{
@@ -35,8 +36,9 @@
   --color-dark: var(--color-blue);
 }
 
-[data-theme="green"]{
-  --color-light: var(--color-green);
+[data-theme="bb-blue"]{
+  --color-light: var(--color-bb-blue);
+  --color-dark: #efecda;
 }
 
 [data-theme="yellow"]{

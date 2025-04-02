@@ -46,7 +46,7 @@
     .theme-switch-option.theme-switch-option-light::before {background: var(--color-pale); }
     .theme-switch-option.theme-switch-option-dark::before { background: var(--color-black); }
     .theme-switch-option.theme-switch-option-pink::before { background: var(--color-pink); }
-    .theme-switch-option.theme-switch-option-green::before { background: var(--color-green); }
+    .theme-switch-option.theme-switch-option-bb-blue::before { background: var(--color-bb-blue); }
     .theme-switch-option.theme-switch-option-yellow::before { background: var(--color-yellow); }
   }
 
